@@ -1,10 +1,8 @@
 from uuid import uuid4
-
 from fastapi.testclient import TestClient
 from backend.main import app
 
 client = TestClient(app)
-
 
 def create_user_fixture():
     response = client.post(
@@ -18,7 +16,6 @@ def create_user_fixture():
     assert response.status_code == 201
     return response.json()
 
-
 def test_create_user():
     response = client.post(
         "/users",
@@ -31,7 +28,6 @@ def test_create_user():
 
     assert response.status_code == 201
     assert "id" in response.json()
-
 
 def test_create_task():
     user = create_user_fixture()
@@ -47,7 +43,6 @@ def test_create_task():
 
     assert response.status_code == 201
     assert response.json()["title"] == "Teste Pytest"
-
 
 def test_list_tasks():
     user = create_user_fixture()
@@ -66,7 +61,6 @@ def test_list_tasks():
 
     assert response.status_code == 200
     assert isinstance(response.json(), list)
-
 
 def test_update_task():
     user = create_user_fixture()
@@ -95,7 +89,6 @@ def test_update_task():
     assert response.status_code == 200
     assert response.json()["title"] == "Atualizado"
     assert response.json()["status"] == "COMPLETED"
-
 
 def test_delete_task():
     user = create_user_fixture()
