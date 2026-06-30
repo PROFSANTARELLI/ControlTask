@@ -65,13 +65,14 @@ Validação Final
 Apresentação Técnica
 ```
 
----
-
 # Etapa 1 - Atualizando o Projeto Local
 
 Antes de iniciar qualquer atividade devemos garantir que todos estão utilizando a versão mais recente do sistema.
 
 Abra o terminal do VS Code.
+
+Clone o repositório, caso não tenha feito anteriormente:
+git clone https://github.com/"usuario/repositorio.git"
 
 Atualize o repositório:
 git pull
@@ -89,7 +90,15 @@ Explicação:
 O comando `git pull` sincroniza o projeto local com o repositório remoto.
 O comando `git status` informa o estado atual do projeto.
 
----
+Entrar no projeto:
+cd controltask-2
+
+Abri o projeto completo:
+code .
+
+Gere o ambiente virtual
+python -m venv venv
+.\venv\Scripts\Activate.ps1
 
 # Etapa 2 - Revisão Técnica da Estrutura do Projeto
 Analisar toda a estrutura construída.
@@ -114,7 +123,6 @@ controltask/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-```
 
 Objetivos desta revisão:
 * Identificar arquivos desnecessários;
@@ -171,7 +179,7 @@ Verificar:
 # Etapa 5 - Executando Testes Finais
 
 Executar:
-pytest
+pytest (instale antes se necessário)
 ```
 
 Resultado esperado:
